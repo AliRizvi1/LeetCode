@@ -1,44 +1,50 @@
 //
 //  main.cpp
-//  FizzBuzz
+//  LeetCode
 //
-//  Created by Ali Rizvi on 11/6/18.
+//  Created by Ali Rizvi on 12/4/18.
 //  Copyright © 2018 Ali Rizvi. All rights reserved.
 //
 
 #include <iostream>
-#include <string>
 #include <vector>
+#include <math.h>
+#include <queue>
 
 using namespace std;
 
-    int reverse(int x) {
-        // if (x == (2^31)-1)
-        //     return 0;
+string sub(string s1, string s2) {
+    queue<char> s1Q, s2Q;
+    bool big = (s1.length() >= s2.length());
+    if (big) {
         
-        vector<int> digits;
-        while (x>0) {
-            //digits will be in reverse order already
-            digits.push_back(x%10);
-            x = x / 10;
+        for (int i=0;i < s1.length();i++) {
+            s1Q.push(s1[i]);
+            if (s2.length() >= i)
+                s2Q.push(s2[i]);
         }
-        //digits[0] = 1;
-        //digits[1] = 2;
-        //digits[2] = 3;
-        int answer=0;
-        for (int i=0;i<digits.size();i++) {
-            answer += digits[i] * 10^(digits.size()-i-1);
-        }
-        
-        return answer;
     }
-
-int main(int argc, const char * argv[]) {
-    int x = 321;
-    char c;
-    cin>>c;
+    else
+        for (int i=0; i < s2.length(); i++) {
+            s2Q.push(s2[i]);
+            if (s1.length() >= i)
+                s1Q.push(s1[i]);
+        }
     
-    return reverse(x);
-
+    char charArr[] = new array<char>;
+    if (big)
+        for (int i = 0; i < s2.length();i++) {
+            if (s1Q.front() == s2Q.front())
+                
+                
+        }
+    
 }
 
+
+int main(int argc, const char * argv[]) {
+    
+    
+    return 0;
+    
+}
